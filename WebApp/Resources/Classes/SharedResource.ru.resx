@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>О клинике</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Are_you_ready_to_come" xml:space="preserve">
+    <value>Вы готовы прийти?</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Статьи</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>Позвоните нам</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Свяжитесь с нами</value>
+  </data>
+  <data name="EmailUsAt" xml:space="preserve">
+    <value>Напишите нам по адресу</value>
+  </data>
+  <data name="ForPatients" xml:space="preserve">
+    <value>Для пациентов</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Новости</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="PromotionsAndDiscounts" xml:space="preserve">
+    <value>Акции и скидки</value>
+  </data>
+  <data name="ReceptionAtReception" xml:space="preserve">
+    <value>Запись на прием</value>
+  </data>
+  <data name="RecordingForReception" xml:space="preserve">
+    <value>Запись на приём</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="ServicesAndPrices" xml:space="preserve">
+    <value>Услуги</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Ваше сообщение</value>
+  </data>
+  <data name="NameClinic" xml:space="preserve">
+    <value>Стоматологический кабинет</value>
+  </data>
+  <data name="Bridge_likeDentures" xml:space="preserve">
+    <value>мостоподобные протезы</value>
+  </data>
+  <data name="CoatingTeethFluorideVarnish" xml:space="preserve">
+    <value>покрытие зубов фтор-лаком</value>
+  </data>
+  <data name="DentalRadiography" xml:space="preserve">
+    <value>дентальна ренгенография</value>
+  </data>
+  <data name="MetalCeramics" xml:space="preserve">
+    <value>металлокерамика</value>
+  </data>
+  <data name="Orthopedics" xml:space="preserve">
+    <value>Ортопедия</value>
+  </data>
+  <data name="OurGoal" xml:space="preserve">
+    <value>Наша цель - повысить качество жизни наших пациентов</value>
+  </data>
+  <data name="PeriodontitisTreatment" xml:space="preserve">
+    <value>лечение периодонтиту</value>
+  </data>
+  <data name="PreventionAndAesthetics" xml:space="preserve">
+    <value>Профилактика и эстетика</value>
+  </data>
+  <data name="Prosthetics" xml:space="preserve">
+    <value>Протезирование</value>
+  </data>
+  <data name="RemovableProsthetics" xml:space="preserve">
+    <value>сьёмное протезирование</value>
+  </data>
+  <data name="RemovalOfDentalPlaque" xml:space="preserve">
+    <value>удаление зубных отложений</value>
+  </data>
+  <data name="RemovalOfTooth" xml:space="preserve">
+    <value>удаление зуба</value>
+  </data>
+  <data name="RoutineInspection" xml:space="preserve">
+    <value>профосмотр</value>
+  </data>
+  <data name="SealingFigures" xml:space="preserve">
+    <value>герметизация фигур</value>
+  </data>
+  <data name="Silvering" xml:space="preserve">
+    <value>серебление</value>
+  </data>
+  <data name="SingleCrowns" xml:space="preserve">
+    <value>одиночные коронки</value>
+  </data>
+  <data name="SpecialistConsultation" xml:space="preserve">
+    <value>консультация специалиста</value>
+  </data>
+  <data name="Surgery" xml:space="preserve">
+    <value>Хирургия</value>
+  </data>
+  <data name="Survey" xml:space="preserve">
+    <value>Обследование</value>
+  </data>
+  <data name="TherapeuticTreatment" xml:space="preserve">
+    <value>Терапевтическое лечение</value>
+  </data>
+  <data name="TreatmentOfCaries" xml:space="preserve">
+    <value>лечение кариеса</value>
+  </data>
+  <data name="TreatmentOfPulpitis" xml:space="preserve">
+    <value>лечение пульпиту</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>г. Чернигов, ул. Шевчука, 14</value>
+  </data>
+  <data name="AVisitToTheDentistIsImportant" xml:space="preserve">
+    <value>Посещение стоматолога - это важно!</value>
+  </data>
+  <data name="BreakFrom" xml:space="preserve">
+    <value>перерыв с 14.00 до 16.00</value>
+  </data>
+  <data name="ConvenientSchedule" xml:space="preserve">
+    <value>Удобный график работы</value>
+  </data>
+  <data name="DentalTechnician" xml:space="preserve">
+    <value>Зубной техник</value>
+  </data>
+  <data name="Dentist" xml:space="preserve">
+    <value>Доктор-стоматолог</value>
+  </data>
+  <data name="DentistryForTheWholeFamily" xml:space="preserve">
+    <value>Стоматология для всей семьи</value>
+  </data>
+  <data name="DesiredDate" xml:space="preserve">
+    <value>Желаемая дата, в формате: месяц/день/год. Например: 12/31/2018</value>
+  </data>
+  <data name="EmailAddressIsNotCorrect" xml:space="preserve">
+    <value>Email адрес указан не правильно</value>
+  </data>
+  <data name="EmailFieldIsRequired" xml:space="preserve">
+    <value>Поле Email обязательно для заполнения</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Фамилия, имя, отчество</value>
+  </data>
+  <data name="HighQualityServices" xml:space="preserve">
+    <value>Высокое качество услуг</value>
+  </data>
+  <data name="IndexText01" xml:space="preserve">
+    <value>Стоматологический кабинет "Весела усмішка" позволяет пациенту получить максимально высокий результат с минимальным дискомфортом и по очень демократичной цене. Стоматологический кабинет "Весела усмішка" – это уют, комфорт, приветливость и доброжелательность персонала, высокое качество лечения, имплантации и протезирования зубов</value>
+  </data>
+  <data name="IndexText02" xml:space="preserve">
+    <value>Стандарт качества лечения у нас - это максимально щадящие вмешательства; полная безболезненность лечения; использование самых совершенных технологий и материалов; исключительное внимание к деталям и пожеланиям пациентов; грамотная профилактика стоматологических заболеваний</value>
+  </data>
+  <data name="IndexText03" xml:space="preserve">
+    <value>Часто многие даже вполне обеспеченные и образованные люди приходят к врачу только тогда, когда нужны уже услуги не терапевта, а хирурга или протезиста. Не следует так относиться к своим зубам. Наши специалисты способны любое заболевание зубов вылечить абсолютно безболезненно</value>
+  </data>
+  <data name="IndexText04" xml:space="preserve">
+    <value>В будние мы принимает пациентов с раннего утра до позднего вечера, также возможна запись и в субботу</value>
+  </data>
+  <data name="IndexText05" xml:space="preserve">
+    <value>Мы всегда готовы принять во внимание все ваши пожелания и найти персональное решение проблемы в каждом отдельном случае</value>
+  </data>
+  <data name="IndexText06" xml:space="preserve">
+    <value>Инновационная система отбеливания ZOOM 4, лазерные технологии, современное оборудование KAVO, SIRONA, NSC и многие другие</value>
+  </data>
+  <data name="IndexText07" xml:space="preserve">
+    <value>Знания, опыт, совершенствование, владение самыми современными и эффективными методиками</value>
+  </data>
+  <data name="IndividualApproach" xml:space="preserve">
+    <value>Индивидуальный подход</value>
+  </data>
+  <data name="LatestEquipmentAndTechnology" xml:space="preserve">
+    <value>Новейшее оборудование и технологии</value>
+  </data>
+  <data name="MondaySaturdayFrom" xml:space="preserve">
+    <value>понедельник - суббота с 09.00 до 20.00</value>
+  </data>
+  <data name="MoreDetails" xml:space="preserve">
+    <value>Детальнее</value>
+  </data>
+  <data name="NameCannotExceed20Characters" xml:space="preserve">
+    <value>Имя не может превышать 20 символов</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Наши специалисты</value>
+  </data>
+  <data name="PleaseWriteMessage" xml:space="preserve">
+    <value>Напишите, пожалуйста, сообщение</value>
+  </data>
+  <data name="QualifiedSpecialists" xml:space="preserve">
+    <value>Квалифицированные специалисты</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>График работы</value>
+  </data>
+  <data name="SundayIsADayOff" xml:space="preserve">
+    <value>воскресенье - выходной</value>
+  </data>
+  <data name="TextAbout01" xml:space="preserve">
+    <value>В нашей работе мы используем исключительно новейшие методы лечения, например, такие как лазерная стоматология и современные, высококачественные, материалы. Все оборудование, установленное в наших клиниках, отвечает мировым стоматологическим стандартам. Благодаря ему мы оказываем широчайший спектр услуг, недоступных государственным лечебным учреждениям. С нами вы можете забыть о том, что такое неправильный прикус, некрасивый оттенок или форма зубов, щели между зубами и другие проблемы.</value>
+  </data>
+  <data name="TextAbout02" xml:space="preserve">
+    <value>Люди, воспользовавшись нашими услугами, рекомендуют клинику своим друзьями, коллегами и знакомым. А все потому, что у нас действительно работают лучшие стоматологи. Истинные профессионалы своего дела, которые выполняют работу быстро, качественно и безболезненно, даря пациентам здоровые зубы и белоснежную улыбку!</value>
+  </data>
+  <data name="TextAbout03" xml:space="preserve">
+    <value>Первичные консультации в клинике бесплатные. Позвоните и запишитесь на бесплатную консультацию к специалисту прямо сейчас: +38 (063) 877-27-16, +38 (063) 494-17-50.</value>
+  </data>
+  <data name="TextAbout04" xml:space="preserve">
+    <value>Мы работаем с понедельника по субботу с 09.00 до 20.00; перерыв с 14.00 до 16.00; воскресенье - выходной.</value>
+  </data>
+  <data name="TheFieldDesiredDateIsRequired" xml:space="preserve">
+    <value>Поле "Желаемая дата" обязательно для заполнения</value>
+  </data>
+  <data name="UseQualityToothpastes" xml:space="preserve">
+    <value>Используйте качественные зубные пасты</value>
+  </data>
+  <data name="ValovenkoAndreyAnatolyevich" xml:space="preserve">
+    <value>Валовенко Андрей Анатольевич</value>
+  </data>
+  <data name="ValovenkoLyudmilaVladimirovna" xml:space="preserve">
+    <value>Валовенко Людмила Владимировна</value>
+  </data>
+  <data name="WhyChoosesUs" xml:space="preserve">
+    <value>Почему выбирают именно нас?</value>
+  </data>
+  <data name="YouDidNotSpecifyYourName" xml:space="preserve">
+    <value>Вы не указали своё имя</value>
+  </data>
+  <data name="YouHaveNotEnteredThePhone" xml:space="preserve">
+    <value>Вы не ввели телефон!</value>
+  </data>
+  <data name="YourSmileIsOurCalling" xml:space="preserve">
+    <value>Ваша улыбка – наше призвание</value>
+  </data>
+</root>

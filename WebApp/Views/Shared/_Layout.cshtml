@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Стоматология Чернигов ..." />
+    <meta name="Keywords" content="стоматологический кабинет 'Весела усмішка', весела усмишка, весела усмішка, стоматология, стоматология Чернигов, лечение зубов, зубная боль, стоматолог, зубной врач">
+
+
+    <title>
+        @*@Resources.Resource.NameClinic*@
+        Стоматологический кабинет "Весела усмішка"
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="~/fonts/ionicons/css/ionicons.min.css">
+    @*<link rel="stylesheet" href="~/Content/fonts/fontawesome/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+
+    <header role="banner">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-8 col-7 col-auto">
+                        <ul class="social list-unstyled">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100011895847296" target="_blank">
+                                    <span class="fa fa-facebook"></span>
+                                </a>
+                            </li>
+                            @*<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fa fa-instagram"></span></a></li>*@
+                        </ul>
+                    </div>
+
+                    @*<div class="col-md-4 col-sm-4 col-auto text-center">
+                            <p class="mb-0">
+                                @Html.ActionLink("Заказать звонок", "About", null, new { @class = "cta-btn", data_toggle = "modal", data_target = "#modalCallBack" })
+                            </p>
+                        </div>*@
+
+                    @*<div class="col-md-3 col-sm-4 col-5 col-auto ">
+                            <p class="mb-0 pull-right ">
+                                @Html.ActionLink("UA", "ChangeCulture", "Home", new { id = "uk" }, new { id = "language-ua", @class = "button-for-language" })
+                                <span style="color: white;">|</span>
+                                @Html.ActionLink("RU", "ChangeCulture", "Home", new { id = "ru" }, new { id = "language-ru", @class = "button-for-language" })
+                                @Html.ActionLink("Вход", "Authorization", "Home")
+                            </p>
+                        </div>*@
+
+                        <div>
+                            @await Html.PartialAsync("_SelectLanguagePartial")
+                        </div>
+
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="d-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block" href='@Url.Action("Index", "Home")' @*class="navbar-brand"*@>
+                        <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
+                            <b>
+                                @*Resources.Resource.NameClinic*@
+                                Стоматологический кабинет
+                                <br />
+                                <span class="text-uppercase ">"Весела усмішка"</span>
+                            </b>
+                        </h4>
+                    </a>
+
+                    <a class="d-block d-sm-none d-none d-sm-block d-md-none" href='@Url.Action("Index", "Home")' @*class="navbar-brand"*@>
+                        <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
+                            <b>
+                                <small>
+                                    @*Resources.Resource.NameClinic*@
+                                    Стоматологический кабинет
+                                    <br />
+                                    <span class="text-uppercase ">"Весела усмішка"</span>
+                                </small>
+                            </b>
+                        </h4>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarsExample05">
+                        <ul class="navbar-nav ml-auto" style="font-size: 18px;">
+                            <li class="nav-item">
+                                @Html.ActionLink(
+                               "Главная"
+                               /*Resources.Resource.Index*/, "Index", "Home", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink(
+                               "О клинике"
+                               //Resources.Resource.About
+                               , "About", "Home", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink(
+                               "Услуги"
+                               //Resources.Resource.ServicesAndPrices
+                               , "ServicesAndPrices", "Home", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @*@Html.ActionLink(Resources.Resource.ReceptionAtReception, "Appointment", "Home", null, new { @class = "nav-link" })*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Appointment">Запись на прийом</a>
+                            </li>
+                            @*<li class="nav-item">
+                                    @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
+                                </li>*@
+                            @*<li class="nav-item">
+                                    @Html.ActionLink(@Resources.Resource.Articles, "Articles", null, new { @class = "nav-link" })
+                                </li>*@
+                            <li class="nav-item">
+                                @*@Html.ActionLink(@Resources.Resource.Contacts, "Contact", "Home", null, new { @class = "nav-link" })*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a>
+                            </li>
+                            @*<li class="nav-item">
+                                    @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    @if (IsSectionDefined("Slider"))
+    {
+        @RenderSection("Slider");
+    }
+    else
+    {
+        <div class="top-bar" style="background-color:#e1f5fe;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-12">
+                        <ol class="social list-unstyled" style="padding-top:10px; padding-bottom:10px;">
+                            <li><span style="color:black; font-size: 26px; border-bottom: 3px solid;">@ViewBag.Title</span></li>
+                            <li class="active"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="row element-animate" style="margin-bottom: 0px;">
+                <div class="col-md-4 ">
+                    <h3>
+                        @*@Resources.Resource.ServicesAndPrices*@
+                        Услуги
+                    </h3>
+                    <ul class="footer-link list-unstyled">
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Обследование
+                                @*@Resources.Resource.Survey*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Терапевтическое лечение
+                                @*@Resources.Resource.TherapeuticTreatment*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Ортопедия
+                                @*@Resources.Resource.Orthopedics*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Хирургия
+                                @*@Resources.Resource.Surgery*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Протезирование
+                                @*@Resources.Resource.Prosthetics*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
+                                Профилактика и эстетика
+                                @*@Resources.Resource.PreventionAndAesthetics*@
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 ">
+                    <h3>
+                        График работы
+                        @*@Resources.Resource.Schedule*@
+                    </h3>
+                    <ul class="footer-link list-unstyled">
+                        <li>
+                            <a href="#">
+                                понедельник - суббота с 09.00 до 20.00
+                                @*@Resources.Resource.MondaySaturdayFrom*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                перерыв с 14.00 до 16.00
+                                @*@Resources.Resource.BreakFrom*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                воскресенье - выходной
+                                @*@Resources.Resource.SundayIsADayOff*@
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        Контакты
+                        @*@Resources.Resource.Contacts*@
+                    </h3>
+                    <h4 class="mb-3 h6 text-white">
+                        Адрес:
+                        @*@Resources.Resource.Address:*@
+                    </h4>
+                    <p class=" ">
+                        г. Чернигов, ул. Шевчука, 14
+                        @*@Resources.Resource.Address1*@
+                    </p>
+                    <h4 class="mb-3 h6 text-white">Email:</h4>
+                    <p class=" "><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
+                    <h4 class="mb-3 h6 text-white">Телефон:</h4>
+                    <p>+38 (063) 877-27-16</p>
+                    <p>+38 (063) 494-17-50</p>
+                </div>
+            </div>
+            <div class="row pt-md-3 element-animate">
+                <div class="col-md-12">
+                    <hr class="border-t">
+                </div>
+                <div class="col-md-6 col-sm-12 copyright">
+                    <p>
+                        @*@Resources.Resource.NameClinic*@
+                        Стоматологический кабинет
+                        "Весела усмішка" &copy; &nbsp; 2018
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+                    <a class="p-2" href="https://www.facebook.com/profile.php?id=100011895847296" target="_blank">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/scripts/owl.carousel.min.js"></script>
+    <script src="~/scripts/bootstrap-datepicker.js"></script>
+    <script src="~/scripts/jquery.timepicker.min.js"></script>
+    <script src="~/scripts/jquery.waypoints.min.js"></script>
+    <script src="~/scripts/main.js"></script>
+
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+    <script src="~/Scripts/jquery.cookie.js"></script>
+
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
