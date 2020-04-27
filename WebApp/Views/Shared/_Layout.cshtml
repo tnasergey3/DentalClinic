@@ -1,17 +1,21 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
+
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta name="description" content="Стоматология Чернигов ..." />
     <meta name="Keywords" content="стоматологический кабинет 'Весела усмішка', весела усмишка, весела усмішка, стоматология, стоматология Чернигов, лечение зубов, зубная боль, стоматолог, зубной врач">
 
-
     <title>
         @*@Resources.Resource.NameClinic*@
-        Стоматологический кабинет "Весела усмішка"
+        @SharedLocalizer["NameClinic"] "Весела усмішка"
     </title>
+    <link href="~/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
@@ -23,33 +27,10 @@
     <link rel="stylesheet" href="~/fonts/ionicons/css/ionicons.min.css">
     @*<link rel="stylesheet" href="~/Content/fonts/fontawesome/css/font-awesome.min.css">*@
     <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
-
     <link rel="stylesheet" href="~/css/style.css">
-
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    @*<header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>*@
 
     <header role="banner">
         <div class="top-bar">
@@ -75,17 +56,17 @@
                         </div>*@
 
                     @*<div class="col-md-3 col-sm-4 col-5 col-auto ">
-                            <p class="mb-0 pull-right ">
-                                @Html.ActionLink("UA", "ChangeCulture", "Home", new { id = "uk" }, new { id = "language-ua", @class = "button-for-language" })
-                                <span style="color: white;">|</span>
-                                @Html.ActionLink("RU", "ChangeCulture", "Home", new { id = "ru" }, new { id = "language-ru", @class = "button-for-language" })
-                                @Html.ActionLink("Вход", "Authorization", "Home")
-                            </p>
+                                <p class="mb-0 pull-right ">
+                                    @Html.ActionLink("UA", "ChangeCulture", "Home", new { id = "uk" }, new { id = "language-ua", @class = "button-for-language" })
+                                    <span style="color: white;">|</span>
+                                    @Html.ActionLink("RU", "ChangeCulture", "Home", new { id = "ru" }, new { id = "language-ru", @class = "button-for-language" })
+                                    @Html.ActionLink("Вход", "Authorization", "Home")
+                                </p>
                         </div>*@
 
-                        <div>
-                            @await Html.PartialAsync("_SelectLanguagePartial")
-                        </div>
+                    <div class="col-md-3 col-sm-4 col-5 col-auto">
+                        @await Html.PartialAsync("_SelectLanguagePartial")
+                    </div>
 
                     <div>
 
@@ -94,23 +75,24 @@
             </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <a class="d-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block" href='@Url.Action("Index", "Home")' @*class="navbar-brand"*@>
+                    <a class="d-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block" href='@Url.Action("Index", "Home")'>
                         <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
                             <b>
                                 @*Resources.Resource.NameClinic*@
-                                Стоматологический кабинет
+                                @SharedLocalizer["NameClinic"]
                                 <br />
                                 <span class="text-uppercase ">"Весела усмішка"</span>
                             </b>
                         </h4>
                     </a>
 
-                    <a class="d-block d-sm-none d-none d-sm-block d-md-none" href='@Url.Action("Index", "Home")' @*class="navbar-brand"*@>
+                    <a class="d-block d-sm-none d-none d-sm-block d-md-none" href='@Url.Action("Index", "Home")'>
                         <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
                             <b>
                                 <small>
                                     @*Resources.Resource.NameClinic*@
-                                    Стоматологический кабинет
+                                    @*Стоматологический кабинет*@
+                                    @SharedLocalizer["NameClinic"]
                                     <br />
                                     <span class="text-uppercase ">"Весела усмішка"</span>
                                 </small>
@@ -124,25 +106,38 @@
                     <div class="collapse navbar-collapse" id="navbarsExample05">
                         <ul class="navbar-nav ml-auto" style="font-size: 18px;">
                             <li class="nav-item">
-                                @Html.ActionLink(
-                               "Главная"
-                               /*Resources.Resource.Index*/, "Index", "Home", null, new { @class = "nav-link" })
+                                @*@Html.ActionLink(
+                                    Resources.Resource.Index, "Index", "Home", null, new { @class = "nav-link" })*@
+
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                    @SharedLocalizer["Index"]
+                                </a>
                             </li>
                             <li class="nav-item">
-                                @Html.ActionLink(
-                               "О клинике"
-                               //Resources.Resource.About
-                               , "About", "Home", null, new { @class = "nav-link" })
+                                @*@Html.ActionLink(
+                                    "О клинике"
+                                    //Resources.Resource.About
+                                    , "About", "Home", null, new { @class = "nav-link" })*@
+
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">
+                                    @SharedLocalizer["About"]
+                                </a>
                             </li>
                             <li class="nav-item">
-                                @Html.ActionLink(
-                               "Услуги"
-                               //Resources.Resource.ServicesAndPrices
-                               , "ServicesAndPrices", "Home", null, new { @class = "nav-link" })
+                                @*@Html.ActionLink(
+                                    "Услуги"
+                                    //Resources.Resource.ServicesAndPrices
+                                    , "ServicesAndPrices", "Home", null, new { @class = "nav-link" })*@
+
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ServicesAndPrices">
+                                    @SharedLocalizer["ServicesAndPrices"]
+                                </a>
                             </li>
                             <li class="nav-item">
                                 @*@Html.ActionLink(Resources.Resource.ReceptionAtReception, "Appointment", "Home", null, new { @class = "nav-link" })*@
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Appointment">Запись на прийом</a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">
+                                    @SharedLocalizer["ReceptionAtReception"]
+                                </a>
                             </li>
                             @*<li class="nav-item">
                                     @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
@@ -152,7 +147,9 @@
                                 </li>*@
                             <li class="nav-item">
                                 @*@Html.ActionLink(@Resources.Resource.Contacts, "Contact", "Home", null, new { @class = "nav-link" })*@
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                                    @SharedLocalizer["Contacts"]
+                                </a>
                             </li>
                             @*<li class="nav-item">
                                     @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
@@ -185,19 +182,12 @@
         </div>
     }
 
-
-
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2020 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>*@
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="row element-animate" style="margin-bottom: 0px;">
@@ -209,20 +199,23 @@
                     <ul class="footer-link list-unstyled">
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Обследование
+                                @*Обследование*@
                                 @*@Resources.Resource.Survey*@
+                                @SharedLocalizer["Survey"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Терапевтическое лечение
+                                @*Терапевтическое лечение*@
                                 @*@Resources.Resource.TherapeuticTreatment*@
+                                @SharedLocalizer["TherapeuticTreatment"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Ортопедия
+                                @*Ортопедия*@
                                 @*@Resources.Resource.Orthopedics*@
+                                @SharedLocalizer["Orthopedics"]
                             </a>
                         </li>
                         <li>
@@ -233,56 +226,65 @@
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Протезирование
+                                @*Протезирование*@
                                 @*@Resources.Resource.Prosthetics*@
+                                @SharedLocalizer["Prosthetics"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Профилактика и эстетика
+                                @*Профилактика и эстетика*@
                                 @*@Resources.Resource.PreventionAndAesthetics*@
+                                @SharedLocalizer["PreventionAndAesthetics"]
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4 ">
                     <h3>
-                        График работы
+                        @*График работы*@
                         @*@Resources.Resource.Schedule*@
+                        @SharedLocalizer["Schedule"]
                     </h3>
                     <ul class="footer-link list-unstyled">
                         <li>
                             <a href="#">
-                                понедельник - суббота с 09.00 до 20.00
+                                @*понедельник - суббота с 09.00 до 20.00*@
                                 @*@Resources.Resource.MondaySaturdayFrom*@
+                                @SharedLocalizer["MondaySaturdayFrom"]
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                перерыв с 14.00 до 16.00
+                                @*перерыв с 14.00 до 16.00*@
                                 @*@Resources.Resource.BreakFrom*@
+                                @SharedLocalizer["BreakFrom"]
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                воскресенье - выходной
+                                @*воскресенье - выходной*@
                                 @*@Resources.Resource.SundayIsADayOff*@
+                                @SharedLocalizer["SundayIsADayOff"]
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h3>
-                        Контакты
+                        @*Контакты*@
                         @*@Resources.Resource.Contacts*@
+                        @SharedLocalizer["Contacts"]
                     </h3>
                     <h4 class="mb-3 h6 text-white">
-                        Адрес:
+                        @*Адрес:*@
                         @*@Resources.Resource.Address:*@
+                        @SharedLocalizer["Address"]
                     </h4>
                     <p class=" ">
-                        г. Чернигов, ул. Шевчука, 14
+                        @*г. Чернигов, ул. Шевчука, 14*@
                         @*@Resources.Resource.Address1*@
+                        @SharedLocalizer["Address1"]
                     </p>
                     <h4 class="mb-3 h6 text-white">Email:</h4>
                     <p class=" "><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
@@ -298,7 +300,8 @@
                 <div class="col-md-6 col-sm-12 copyright">
                     <p>
                         @*@Resources.Resource.NameClinic*@
-                        Стоматологический кабинет
+                        @*Стоматологический кабинет*@
+                        @SharedLocalizer["NameClinic"]
                         "Весела усмішка" &copy; &nbsp; 2018
                     </p>
                 </div>
@@ -321,7 +324,7 @@
     <script src="~/scripts/main.js"></script>
 
     @*<script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
 
     <script src="~/Scripts/jquery.cookie.js"></script>
 
@@ -330,6 +333,21 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
 
+
+    @*<script>
+        if ($.cookie('lang') == 'ru') {
+            $('#language-ru').css('color', 'white');
+            $('#language-ua').css('color', '#80d8ff');
+        }
+        else if ($.cookie('lang') == 'uk') {
+            $('#language-ua').css('color', 'white');
+            $('#language-ru').css('color', '#80d8ff');
+        }
+        else {
+            $('#language-ua').css('color', 'white');
+            $('#language-ru').css('color', '#80d8ff');
+        }
+    </script>*@
 
     @RenderSection("Scripts", required: false)
 </body>

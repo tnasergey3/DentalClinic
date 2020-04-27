@@ -1,14 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
-
 @inject IViewLocalizer Localizer
-
 @inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
 
-
-
 @{
-    ViewBag.Title = "Главная";
-    //@Resources.Resource.Index;
+    ViewBag.Title = @SharedLocalizer["Index"];
     ViewBag.CurrentPage = "Index";
 }
 
@@ -73,41 +68,51 @@
                 <p>
                     @*Стоматологический кабинет "Весела усмішка" позволяет пациенту получить максимально высокий результат с минимальным дискомфортом и по очень демократичной цене. Стоматологический кабинет "Весела усмішка" – это уют, комфорт, приветливость и доброжелательность персонала, высокое качество лечения, имплантации и протезирования зубов*@
                     @*@Resources.Resource.IndexText01*@
-                    @SharedLocalizer["IndexText01"]                    
+                    @SharedLocalizer["IndexText01"]
                 </p>
             </div>
             @*@Html.ActionLink("Детальнее", "About", "Home", null, new { @class = "btn-more" })*@
             <a class="btn-more" asp-area="" asp-controller="Home" asp-action="About">
-            @SharedLocalizer["MoreDetails"]
-        </a>
+                @SharedLocalizer["MoreDetails"]
+            </a>
         </div>
         <div class="col-md-4 p-0 two-col element-animate">
             <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
                 <span class="icon flaticon-first-aid-kit"></span>
                 <h2>
-                    Высокое качество услуг
+                    @*Высокое качество услуг*@
                     @*@Resources.Resource.HighQualityServices*@
+                    @SharedLocalizer["HighQualityServices"]
                 </h2>
                 <p>
-                    Стандарт качества лечения у нас - это максимально щадящие вмешательства; полная безболезненность лечения; использование самых совершенных технологий и материалов; исключительное внимание к деталям и пожеланиям пациентов; грамотная профилактика стоматологических заболеваний
+                    @*Стандарт качества лечения у нас - это максимально щадящие вмешательства; полная безболезненность лечения; использование самых совершенных технологий и материалов; исключительное внимание к деталям и пожеланиям пациентов; грамотная профилактика стоматологических заболеваний*@
                     @*@Resources.Resource.IndexText02*@
+                    @SharedLocalizer["IndexText02"]
                 </p>
             </div>
-            @Html.ActionLink("Детальнее"@*@Resources.Resource.MoreDetails*@, "About", null, new { @class = "btn-more" })
+            @*@Html.ActionLink(@Resources.Resource.MoreDetails, "About", null, new { @class = "btn-more" })*@
+            <a class="btn-more" asp-area="" asp-controller="Home" asp-action="About">
+                @SharedLocalizer["MoreDetails"]
+            </a>
         </div>
         <div class="col-md-4 p-0 three-col element-animate">
             <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
                 <span class="icon flaticon-hospital"></span>
                 <h2>
-                    Посещение стоматолога - это важно!
+                    @*Посещение стоматолога - это важно!*@
                     @*@Resources.Resource.AVisitToTheDentistIsImportant*@
+                    @SharedLocalizer["AVisitToTheDentistIsImportant"]
                 </h2>
                 <p>
-                    Часто многие даже вполне обеспеченные и образованные люди приходят к врачу только тогда, когда нужны уже услуги не терапевта, а хирурга или протезиста. Не следует так относиться к своим зубам. Наши специалисты способны любое заболевание зубов вылечить абсолютно безболезненно
+                    @*Часто многие даже вполне обеспеченные и образованные люди приходят к врачу только тогда, когда нужны уже услуги не терапевта, а хирурга или протезиста. Не следует так относиться к своим зубам. Наши специалисты способны любое заболевание зубов вылечить абсолютно безболезненно*@
                     @*@Resources.Resource.IndexText03*@
+                    @SharedLocalizer["IndexText03"]
                 </p>
             </div>
-            @Html.ActionLink("Детальнее"@*Resources.Resource.MoreDetails*@, "About", null, new { @class = "btn-more" })
+            @*@Html.ActionLink("Resources.Resource.MoreDetails, "About", null, new { @class = "btn-more" })*@
+            <a class="btn-more" asp-area="" asp-controller="Home" asp-action="About">
+                @SharedLocalizer["MoreDetails"]
+            </a>
         </div>
     </div>
 </section>
@@ -117,8 +122,9 @@
         <div class="row justify-content-center mb-5 element-animate">
             <div class="col-md-8 text-center mb-5">
                 <h2 class="text-uppercase heading border-bottom mb-4">
-                    Почему выбирают именно нас?
+                    @*Почему выбирают именно нас?*@
                     @*@Resources.Resource.WhyChoosesUs*@
+                    @SharedLocalizer["WhyChoosesUs"]
                 </h2>
             </div>
         </div>
@@ -128,23 +134,27 @@
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <span>01</span>
-                        Удобный график работы
+                        @*Удобный график работы*@
                         @*@Resources.Resource.ConvenientSchedule*@
+                        @SharedLocalizer["ConvenientSchedule"]
                     </a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <span>02</span>
-                        Индивидуальный подход
+                        @*Индивидуальный подход*@
                         @*@Resources.Resource.IndividualApproach*@
+                        @SharedLocalizer["IndividualApproach"]
                     </a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span>03</span>
-                        Новейшее оборудование и технологии
+                        @*Новейшее оборудование и технологии*@
                         @*@Resources.Resource.LatestEquipmentAndTechnology*@
+                        @SharedLocalizer["LatestEquipmentAndTechnology"]
                     </a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span>04</span>
-                        Квалифицированные специалисты
+                        @*Квалифицированные специалисты*@
                         @*@Resources.Resource.QualifiedSpecialists*@
+                        @SharedLocalizer["QualifiedSpecialists"]
                     </a>
                 </div>
             </div>
@@ -155,45 +165,53 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <span class="icon flaticon-hospital"></span>
                         <h2 class="text-primary">
-                            Удобный график работы
+                            @*Удобный график работы*@
                             @*@Resources.Resource.ConvenientSchedule*@
+                            @SharedLocalizer["ConvenientSchedule"]
                         </h2>
                         <p class="lead">
-                            В будние мы принимает пациентов с раннего утра до позднего вечера, также возможна запись и в субботу
+                            @*В будние мы принимает пациентов с раннего утра до позднего вечера, также возможна запись и в субботу*@
                             @*@Resources.Resource.IndexText04*@
+                            @SharedLocalizer["IndexText04"]
                         </p>
                     </div>
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <span class="icon flaticon-first-aid-kit"></span>
                         <h2 class="text-primary">
-                            Индивидуальный подход
+                            @*Индивидуальный подход*@
                             @*@Resources.Resource.IndividualApproach*@
+                            @SharedLocalizer["IndividualApproach"]
                         </h2>
                         <p class="lead">
-                            Мы всегда готовы принять во внимание все ваши пожелания и найти персональное решение проблемы в каждом отдельном случае
+                            @*Мы всегда готовы принять во внимание все ваши пожелания и найти персональное решение проблемы в каждом отдельном случае*@
                             @*@Resources.Resource.IndexText05*@
+                            @SharedLocalizer["IndexText05"]
                         </p>
                     </div>
                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                         <span class="icon flaticon-hospital-bed"></span>
                         <h2 class="text-primary">
-                            Новейшее оборудование и технологии
+                            @*Новейшее оборудование и технологии*@
                             @*@Resources.Resource.LatestEquipmentAndTechnology*@
+                            @SharedLocalizer["LatestEquipmentAndTechnology"]
                         </h2>
                         <p class="lead">
-                            Инновационная система отбеливания ZOOM 4, лазерные технологии, современное оборудование KAVO, SIRONA, NSC и многие другие
+                            @*Инновационная система отбеливания ZOOM 4, лазерные технологии, современное оборудование KAVO, SIRONA, NSC и многие другие*@
                             @*@Resources.Resource.IndexText06*@
+                            @SharedLocalizer["IndexText06"]
                         </p>
                     </div>
                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <span class="icon flaticon-doctor"></span>
                         <h2 class="text-primary">
-                            Квалифицированные специалисты
+                            @*Квалифицированные специалисты*@
                             @*@Resources.Resource.QualifiedSpecialists*@
+                            @SharedLocalizer["QualifiedSpecialists"]
                         </h2>
                         <p class="lead">
-                            Знания, опыт, совершенствование, владение самыми современными и эффективными методиками
+                            @*Знания, опыт, совершенствование, владение самыми современными и эффективными методиками*@
                             @*@Resources.Resource.IndexText07*@
+                            @SharedLocalizer["IndexText07"]
                         </p>
                     </div>
                 </div>
@@ -201,10 +219,4 @@
         </div>
     </div>
 </section>
-
-@ViewData["About"]
-<br>
-@ViewData["Dentist"]
-<br>
-@SharedLocalizer["ContactUs"]
 

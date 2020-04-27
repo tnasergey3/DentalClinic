@@ -15,14 +15,30 @@
         .ToList();
 }
 
-<form asp-controller="Home" asp-action="SetLanguage" style="margin-top:20px;"
+@*<form asp-controller="Home" asp-action="SetLanguage" style="margin-top:20px;"
       asp-route-returnUrl="@Context.Request.Path"
-      method="post" class="form-horizontal">
-    
+      method="post" class="form-horizontal top-bar">
+
     <select name="culture" onchange="this.form.submit();"
-                      asp-for="@requestCulture.RequestCulture.UICulture.Name"
-                      asp-items="cultureItems">
-
+            asp-for="@requestCulture.RequestCulture.UICulture.Name"
+            asp-items="cultureItems"
+            class="">
     </select>
+</form>*@
 
-</form>
+
+@Html.ActionLink("UA", "SetLanguage", "Home",
+    new { culture = "uk", returnUrl = @Context.Request.Path },
+    new { id = "language-ua", @class = "button-for-language", /*onClick= "TextLanguageBold(this)"*/ })
+<span style="color: white;">|</span>
+@Html.ActionLink("RU", "SetLanguage", "Home",
+    new { culture = "ru", returnUrl = @Context.Request.Path },
+    new { id = "language-ru", @class = "button-for-language",/* onClick = "TextLanguageBold(this)"*/ })
+
+<script>
+
+    //function TextLanguageBold(el) {
+    //    el.style.cssText = 'font-weight: bold;'
+    //}
+
+</script>

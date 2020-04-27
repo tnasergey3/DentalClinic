@@ -32,7 +32,7 @@ namespace WebApp.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
-        [HttpPost]
+        //[HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {
             Response.Cookies.Append(

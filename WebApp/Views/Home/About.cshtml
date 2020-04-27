@@ -1,7 +1,146 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
+
 @{
-    ViewData["Title"] = "About";
+    ViewBag.Title = @SharedLocalizer["About"];
+    ViewBag.CurrentPage = "About";
 }
 
-<h1>About</h1>
 
+<section class="section" style="padding: 1em 0;">
+    <div class="container">
+        <div class="row justify-content-center mb-12 element-animate p-4">
+            <h2 class="text-uppercase heading border-bottom mb-4 text-center">
+                @*Ваша улыбка – наше призвание*@
+                @*@Resources.Resource.YourSmileIsOurCalling*@
+                @SharedLocalizer["YourSmileIsOurCalling"]
+            </h2>
+            <p class="" style="text-align: justify;">
+                @*В нашей работе мы используем исключительно новейшие методы лечения, например, такие как лазерная стоматология и современные, высококачественные, материалы. Все оборудование, установленное в наших клиниках, отвечает мировым стоматологическим стандартам. Благодаря ему мы оказываем широчайший спектр услуг, недоступных государственным лечебным учреждениям. С нами вы можете забыть о том, что такое неправильный прикус, некрасивый оттенок или форма зубов, щели между зубами и другие проблемы.*@
+                @*@Resources.Resource.TextAbout01*@
+                @SharedLocalizer["TextAbout01"]
+            </p>
+            <p class="text-justify">
+                @*Люди, воспользовавшись нашими услугами, рекомендуют клинику своим друзьями, коллегами и знакомым. А все потому, что у нас действительно работают лучшие стоматологи. Истинные профессионалы своего дела, которые выполняют работу быстро, качественно и безболезненно, даря пациентам здоровые зубы и белоснежную улыбку!*@
+                @*@Resources.Resource.TextAbout02*@
+                @SharedLocalizer["TextAbout02"]
+            </p>
+            <p class="text-justify">
+                @*Первичные консультации в клинике бесплатные. Позвоните и запишитесь на бесплатную консультацию к специалисту прямо сейчас: +38 (063) 877-27-16, +38 (063) 494-17-50.*@
+                @*@Resources.Resource.TextAbout03*@
+                @SharedLocalizer["TextAbout03"]
+            </p>
+            <p class="text-left">
+                @*Мы работаем с понедельника по субботу с 09.00 до 20.00; перерыв с 14.00 до 16.00; воскресенье - выходной.*@
+                @*@Resources.Resource.TextAbout04*@
+                @SharedLocalizer["TextAbout04"]
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light" style="padding: 1em 0;">
+    <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+            <div class="col-md-8 text-center">
+                <h2 class="text-uppercase heading border-bottom mb-4">
+                    @*Наши специалисты*@
+                    @*@Resources.Resource.OurSpecialists*@
+                    @SharedLocalizer["OurSpecialists"]
+                </h2>
+
+                <div class="row element-animate">
+                    <div class="media d-block media-custom text-center col-md-5" @*style="margin-left:20px; "*@>
+                        <img src='@Url.Content("~/img/doctor_1.jpg")' alt="Image Placeholder" class="img-fluid">
+                        <div class="media-body @*col-md-4 col-md-offset-1*@">
+                            <h3 class="mt-0 text-black">
+                                @*Валовенко Андрей Анатольевич*@
+                                @*@Resources.Resource.ValovenkoAndreyAnatolyevich*@
+                                @SharedLocalizer["ValovenkoAndreyAnatolyevich"]
+                            </h3>
+                            <p>
+                                @*Доктор-стоматолог*@
+                                @*@Resources.Resource.Dentist*@
+                                @SharedLocalizer["Dentist"]
+                            </p>
+                            @*<p>
+                                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                                </p>*@
+                        </div>
+                    </div>
+
+                    <div class="col-md-2"></div>
+
+                    <div class="media d-block media-custom text-center col-md-5" @*style="margin-left:20px; "*@>
+                        <img src='@Url.Content("~/img/doctor_2.jpg")' alt="Image Placeholder" class="img-fluid">
+                        <div class="media-body @*col-md-4 col-md-offset-1*@">
+                            <h3 class="mt-0 text-black">
+                                @*Валовенко Людмила Владимировна*@
+                                @*@Resources.Resource.ValovenkoLyudmilaVladimirovna*@
+                                @SharedLocalizer["ValovenkoLyudmilaVladimirovna"]
+                            </h3>
+                            <p>
+                                @*Зубной техник*@
+                                @*@Resources.Resource.DentalTechnician*@
+                                @SharedLocalizer["DentalTechnician"]
+                            </p>
+                            @*<p>
+                                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                                    <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                                </p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h2 class="text-uppercase heading border-bottom mb-4 text-center">Фотогалерея</h2>
+
+    <div class="row justify-content-center mb-5 element-animate ">
+        <div class="thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7166_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7166_little.jpg")' alt="...">
+            </a>
+        </div>
+
+        <div class=" thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7174_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7174_little.jpg")' alt="...">
+            </a>
+        </div>
+
+        <div class=" thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7193_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7193_little.jpg")' alt="...">
+            </a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-5 element-animate ">
+        <div class="thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7205_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7205_little.jpg")' alt="...">
+            </a>
+        </div>
+
+        <div class=" thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7221_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7221_little.jpg")' alt="...">
+            </a>
+        </div>
+
+        <div class=" thumb">
+            <a data-fancybox="gallery" href='@Url.Content("~/img/ForGallery/IMG_7226_middle.jpg")'>
+                <img class="img-fluid" src='@Url.Content("~/img/ForGallery/IMG_7226_little.jpg")' alt="...">
+            </a>
+        </div>
+    </div>
+</div>

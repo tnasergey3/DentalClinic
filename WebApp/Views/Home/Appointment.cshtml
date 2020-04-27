@@ -1,7 +1,132 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
+
+@model WebApp.Models.Appointment
+
 @{
-    ViewData["Title"] = "Appointment";
+    ViewBag.Title = @SharedLocalizer["ReceptionAtReception"];
+    ViewBag.CurrentPage = "Appointment";
 }
 
-<h1>Appointment</h1>
+
+
+<section class="section" style="padding: 1em 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5 element-animate">
+                @using (Html.BeginForm())
+                {
+                    <div class="row">
+                        @Html.ValidationSummary(true)
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="email">
+                                @*Фамилия, имя, отчество*@
+                                @*@Resources.Resource.FullName*@
+                                @SharedLocalizer["FullName"]
+                            </label>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="email">
+                                @*@Resources.Resource.Phone*@
+                                @SharedLocalizer["Phone"]
+                            </label>
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Phone)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="email">Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            @Html.LabelFor(m => m.DesiredDate)
+                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", id = "appointment_date" })
+                            @Html.ValidationMessageFor(m => m.DesiredDate)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="message">
+                                @*@Resources.Resource.YourMessage*@
+                                @SharedLocalizer["YourMessage"]
+                            </label>
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;" })
+                            @Html.ValidationMessageFor(m => m.Message)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="submit" value=@SharedLocalizer["Send"] class="btn btn-primary btn-lg btn-block">
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 element-animate">
+
+                <h5 class="text-uppercase mb-3">
+                    @*@Resources.Resource.Address*@
+                    @SharedLocalizer["Address"]
+                </h5>
+                <p class="mb-5">
+                    @*г. Чернигов, ул. Шевчука, 14*@
+                    @*@Resources.Resource.Address1*@
+                    @SharedLocalizer["Address1"]
+                </p>
+
+                <h5 class="text-uppercase mb-3">
+                    @*График работы*@
+                    @*@Resources.Resource.Schedule*@
+                    @SharedLocalizer["Schedule"]
+                </h5>
+                <p class="mb-5">
+                    @*понедельник - субота с 09.00 до 20.00*@
+                    @*@Resources.Resource.MondaySaturdayFrom;*@
+                    @SharedLocalizer["MondaySaturdayFrom"]
+                    @*<br>
+                    перерыв с 14.00 до 16.00*@
+                    @*@Resources.Resource.BreakFrom*@
+                    @SharedLocalizer["BreakFrom"]
+                    <br>
+                    @*воскресенье - выходной*@
+                    @*@Resources.Resource.SundayIsADayOff*@
+                    @SharedLocalizer["SundayIsADayOff"]
+                </p>
+
+                <h5 class="text-uppercase mb-3">
+                    @*@Resources.Resource.EmailUsAt*@
+                    @SharedLocalizer["EmailUsAt"]
+                </h5>
+                <p class="mb-5"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
+
+                <h5 class="text-uppercase mb-3">
+                    @*@Resources.Resource.CallUs*@
+                    @SharedLocalizer["CallUs"]
+                </h5>
+                <p class="mb-5">+38 (063) 877-27-16 <br>+38 (063) 494-17-50</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--map-start-->
+<section class="section" style="padding: 1em 0;">
+    <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.449082496793!2d31.276279215996563!3d51.50497657963486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d548841790e1ff%3A0x14bc1026ac2290a!2sShevchuka+St%2C+14%2C+Chernihiv%2C+Chernihivs&#39;ka+oblast%2C+14000!5e0!3m2!1sen!2sua!4v1533340882449" style="border:0; width:100%; height:300px;"></iframe>
+    </div>
+</section>
+<!--map-end-->
 
