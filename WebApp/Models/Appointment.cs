@@ -42,11 +42,11 @@ namespace WebApp.Models
 
         //[Required(ErrorMessageResourceType = typeof(Resources.Resource),
         //    ErrorMessageResourceName = "TheFieldDesiredDateIsRequired")]
+        [Required(ErrorMessage = "Введенная дата не корректна!")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         //[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Желаемая дата, в формате: месяц/день/год. Например: 12/31/2018")] 
-        //[Display(Name = "DesiredDate", ResourceType = typeof(Resources.Resource))]
+        [Display(Name = "Желаемая дата")]
         public DateTime DesiredDate { get; set; }
 
         //public DateTime DesiredTime { get; set; }

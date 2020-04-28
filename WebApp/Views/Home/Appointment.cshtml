@@ -22,7 +22,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="email">
+                            <label for="Name">
                                 @*Фамилия, имя, отчество*@
                                 @*@Resources.Resource.FullName*@
                                 @SharedLocalizer["FullName"]
@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <label for="email">
+                            <label for="Phone">
                                 @*@Resources.Resource.Phone*@
                                 @SharedLocalizer["Phone"]
                             </label>
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-md-12 form-group">
                             @Html.LabelFor(m => m.DesiredDate)
-                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", id = "appointment_date" })
+                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", @*id = "appointment_date"*@ type = "date" })
                             @Html.ValidationMessageFor(m => m.DesiredDate)
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 @*@Resources.Resource.YourMessage*@
                                 @SharedLocalizer["YourMessage"]
                             </label>
-                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;" })
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;"  })
                             @Html.ValidationMessageFor(m => m.Message)
                         </div>
                     </div>
@@ -129,4 +129,8 @@
     </div>
 </section>
 <!--map-end-->
+
+<script>
+
+</script>
 

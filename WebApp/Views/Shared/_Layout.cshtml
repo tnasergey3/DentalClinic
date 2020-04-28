@@ -12,7 +12,6 @@
     <meta name="Keywords" content="стоматологический кабинет 'Весела усмішка', весела усмишка, весела усмішка, стоматология, стоматология Чернигов, лечение зубов, зубная боль, стоматолог, зубной врач">
 
     <title>
-        @*@Resources.Resource.NameClinic*@
         @SharedLocalizer["NameClinic"] "Весела усмішка"
     </title>
     <link href="~/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -78,7 +77,6 @@
                     <a class="d-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block" href='@Url.Action("Index", "Home")'>
                         <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
                             <b>
-                                @*Resources.Resource.NameClinic*@
                                 @SharedLocalizer["NameClinic"]
                                 <br />
                                 <span class="text-uppercase ">"Весела усмішка"</span>
@@ -90,9 +88,7 @@
                         <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
                             <b>
                                 <small>
-                                    @*Resources.Resource.NameClinic*@
-                                    @*Стоматологический кабинет*@
-                                    @SharedLocalizer["NameClinic"]
+                                      @SharedLocalizer["NameClinic"]
                                     <br />
                                     <span class="text-uppercase ">"Весела усмішка"</span>
                                 </small>
@@ -106,35 +102,21 @@
                     <div class="collapse navbar-collapse" id="navbarsExample05">
                         <ul class="navbar-nav ml-auto" style="font-size: 18px;">
                             <li class="nav-item">
-                                @*@Html.ActionLink(
-                                    Resources.Resource.Index, "Index", "Home", null, new { @class = "nav-link" })*@
-
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                                     @SharedLocalizer["Index"]
                                 </a>
                             </li>
                             <li class="nav-item">
-                                @*@Html.ActionLink(
-                                    "О клинике"
-                                    //Resources.Resource.About
-                                    , "About", "Home", null, new { @class = "nav-link" })*@
-
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">
                                     @SharedLocalizer["About"]
                                 </a>
                             </li>
                             <li class="nav-item">
-                                @*@Html.ActionLink(
-                                    "Услуги"
-                                    //Resources.Resource.ServicesAndPrices
-                                    , "ServicesAndPrices", "Home", null, new { @class = "nav-link" })*@
-
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ServicesAndPrices">
                                     @SharedLocalizer["ServicesAndPrices"]
                                 </a>
                             </li>
                             <li class="nav-item">
-                                @*@Html.ActionLink(Resources.Resource.ReceptionAtReception, "Appointment", "Home", null, new { @class = "nav-link" })*@
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">
                                     @SharedLocalizer["ReceptionAtReception"]
                                 </a>
@@ -146,7 +128,6 @@
                                     @Html.ActionLink(@Resources.Resource.Articles, "Articles", null, new { @class = "nav-link" })
                                 </li>*@
                             <li class="nav-item">
-                                @*@Html.ActionLink(@Resources.Resource.Contacts, "Contact", "Home", null, new { @class = "nav-link" })*@
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
                                     @SharedLocalizer["Contacts"]
                                 </a>
@@ -193,28 +174,24 @@
             <div class="row element-animate" style="margin-bottom: 0px;">
                 <div class="col-md-4 ">
                     <h3>
-                        @*@Resources.Resource.ServicesAndPrices*@
-                        Услуги
+                        @SharedLocalizer["ServicesAndPrices"]
                     </h3>
                     <ul class="footer-link list-unstyled">
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
                                 @*Обследование*@
-                                @*@Resources.Resource.Survey*@
                                 @SharedLocalizer["Survey"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
                                 @*Терапевтическое лечение*@
-                                @*@Resources.Resource.TherapeuticTreatment*@
                                 @SharedLocalizer["TherapeuticTreatment"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
                                 @*Ортопедия*@
-                                @*@Resources.Resource.Orthopedics*@
                                 @SharedLocalizer["Orthopedics"]
                             </a>
                         </li>
@@ -227,14 +204,12 @@
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
                                 @*Протезирование*@
-                                @*@Resources.Resource.Prosthetics*@
                                 @SharedLocalizer["Prosthetics"]
                             </a>
                         </li>
                         <li>
                             <a href='@Url.Action("ServicesAndPrices", "Home")'>
                                 @*Профилактика и эстетика*@
-                                @*@Resources.Resource.PreventionAndAesthetics*@
                                 @SharedLocalizer["PreventionAndAesthetics"]
                             </a>
                         </li>
@@ -243,28 +218,24 @@
                 <div class="col-md-4 ">
                     <h3>
                         @*График работы*@
-                        @*@Resources.Resource.Schedule*@
                         @SharedLocalizer["Schedule"]
                     </h3>
                     <ul class="footer-link list-unstyled">
                         <li>
                             <a href="#">
                                 @*понедельник - суббота с 09.00 до 20.00*@
-                                @*@Resources.Resource.MondaySaturdayFrom*@
                                 @SharedLocalizer["MondaySaturdayFrom"]
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 @*перерыв с 14.00 до 16.00*@
-                                @*@Resources.Resource.BreakFrom*@
                                 @SharedLocalizer["BreakFrom"]
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 @*воскресенье - выходной*@
-                                @*@Resources.Resource.SundayIsADayOff*@
                                 @SharedLocalizer["SundayIsADayOff"]
                             </a>
                         </li>
@@ -272,18 +243,12 @@
                 </div>
                 <div class="col-md-4">
                     <h3>
-                        @*Контакты*@
-                        @*@Resources.Resource.Contacts*@
                         @SharedLocalizer["Contacts"]
                     </h3>
                     <h4 class="mb-3 h6 text-white">
-                        @*Адрес:*@
-                        @*@Resources.Resource.Address:*@
                         @SharedLocalizer["Address"]
                     </h4>
                     <p class=" ">
-                        @*г. Чернигов, ул. Шевчука, 14*@
-                        @*@Resources.Resource.Address1*@
                         @SharedLocalizer["Address1"]
                     </p>
                     <h4 class="mb-3 h6 text-white">Email:</h4>
@@ -299,8 +264,6 @@
                 </div>
                 <div class="col-md-6 col-sm-12 copyright">
                     <p>
-                        @*@Resources.Resource.NameClinic*@
-                        @*Стоматологический кабинет*@
                         @SharedLocalizer["NameClinic"]
                         "Весела усмішка" &copy; &nbsp; 2018
                     </p>
@@ -326,20 +289,39 @@
     @*<script src="~/Scripts/jquery.validate.min.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
 
-    <script src="~/Scripts/jquery.cookie.js"></script>
-
-
+    @*удалить файл в папке*@
+    @*<script src="~/Scripts/jquery.cookie.js"></script>*@
 
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+    <script>
 
+        // Скрипты для переключения цвета языка интерфейса UA|RU
+        function findCookieValue(cookieName) {
+            var allcookies = document.cookie;
+            var pos = allcookies.indexOf(cookieName + "=");
 
-    @*<script>
-        if ($.cookie('lang') == 'ru') {
+            // Если cookie с указанным именем найден, извлечь его значения.
+            if (pos != -1) {
+                var start = pos + cookieName.length + 1;
+                var end = allcookies.indexOf(";", start);
+                if (end == -1) end = allcookies.length;
+                var value = allcookies.substring(start, end);
+                value = decodeURIComponent(value);
+                return value;
+            }
+        }
+
+        let nameCookisLanguageUI = findCookieValue(".AspNetCore.Culture");
+        let nameLanguageUI = nameCookisLanguageUI.slice(nameCookisLanguageUI.length - 2);
+
+        //alert(nameLanguageUI);
+
+        if (nameLanguageUI == 'ru') {
             $('#language-ru').css('color', 'white');
             $('#language-ua').css('color', '#80d8ff');
         }
-        else if ($.cookie('lang') == 'uk') {
+        else if (nameLanguageUI == 'uk') {
             $('#language-ua').css('color', 'white');
             $('#language-ru').css('color', '#80d8ff');
         }
@@ -347,7 +329,13 @@
             $('#language-ua').css('color', 'white');
             $('#language-ru').css('color', '#80d8ff');
         }
-    </script>*@
+
+        // ----------------------------------------------------
+
+        //$('.datepicker').datepicker();
+
+
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>

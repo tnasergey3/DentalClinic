@@ -48,7 +48,6 @@ namespace WebApp.Controllers
 
         public ActionResult Index()
         {
-               ViewData["Dentist"] = _sharedLocalizer["Dentist"];
             return View();
         }
         public ActionResult About()
