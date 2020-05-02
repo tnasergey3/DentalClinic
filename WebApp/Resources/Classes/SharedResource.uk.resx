@@ -265,7 +265,7 @@
     <value>Стоматологія для всієї родини</value>
   </data>
   <data name="DesiredDate" xml:space="preserve">
-    <value>Бажана дата, в форматі: місяць/день/рік. Наприклад: 12/31/2018</value>
+    <value>Бажана дата</value>
   </data>
   <data name="EmailAddressIsNotCorrect" xml:space="preserve">
     <value>Email адреса вказана неправильно</value>

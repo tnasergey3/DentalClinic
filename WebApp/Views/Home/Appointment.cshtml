@@ -50,8 +50,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            @Html.LabelFor(m => m.DesiredDate)
-                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", @*id = "appointment_date"*@ type = "date" })
+                            @*@Html.LabelFor(m => m.DesiredDate)*@
+                            <label for="DesiredDate">
+                                 @SharedLocalizer["DesiredDate"]
+                            </label>
+                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", @*id = "appointment_date"*@type = "date" })
                             @Html.ValidationMessageFor(m => m.DesiredDate)
                         </div>
                     </div>

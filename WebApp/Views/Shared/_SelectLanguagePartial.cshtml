@@ -27,10 +27,32 @@
     </form>*@
 
 
-@Html.ActionLink("UA", "SetLanguage", "Home",
+@*@Html.ActionLink("UA", "SetLanguage", "Home",
     new { culture = "uk", returnUrl = @Context.Request.Path },
-    new { id = "language-ua", @class = "button-for-language", style = "padding: 5px;" })
+    new { id = "language-ua", @class = "button-for-language", style = "padding: 5px; font-size: 12px;" })*@
+
+<a asp-controller="Home" 
+   asp-action="SetLanguage" 
+   asp-route-culture="uk" 
+   asp-route-returnUrl="@Context.Request.Path"
+   id="language-ua" 
+   class="button-for-language" 
+   style="padding: 5px; font-size: 12px;">
+    UA
+</a>
+
 <span style="color: #80d8ff; font-size: 13px;">|</span>
-@Html.ActionLink("RU", "SetLanguage", "Home",
+
+@*@Html.ActionLink("RU", "SetLanguage", "Home",
     new { culture = "ru", returnUrl = @Context.Request.Path },
-    new { id = "language-ru", @class = "button-for-language", style = "padding: 5px;" })
+    new { id = "language-ru", @class = "button-for-language", style = "padding: 5px;" })*@
+
+<a asp-controller="Home" 
+   asp-action="SetLanguage"
+   asp-route-culture="ru" 
+   asp-route-returnUrl="@Context.Request.Path"
+   id="language-ru" 
+   class="button-for-language" 
+   style="padding: 5px; font-size: 12px;">
+    RU
+</a>

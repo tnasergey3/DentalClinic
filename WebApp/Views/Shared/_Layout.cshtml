@@ -3,6 +3,11 @@
 @inject IViewLocalizer Localizer
 @inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
 
+@{ 
+    var controller = ViewContext.RouteData.Values["Controller"];
+    var action = ViewContext.RouteData.Values["Action"];
+}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -26,7 +31,7 @@
     <link rel="stylesheet" href="~/fonts/ionicons/css/ionicons.min.css">
     @*<link rel="stylesheet" href="~/Content/fonts/fontawesome/css/font-awesome.min.css">*@
     <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="~/css/style.css">
+    @*<link rel="stylesheet" href="~/css/style.css">*@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -88,7 +93,7 @@
                         <h4 class="text-dark align-middle" style="font-size: 1.3rem;">
                             <b>
                                 <small>
-                                      @SharedLocalizer["NameClinic"]
+                                    @SharedLocalizer["NameClinic"]
                                     <br />
                                     <span class="text-uppercase ">"Весела усмішка"</span>
                                 </small>
@@ -101,40 +106,37 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarsExample05">
                         <ul class="navbar-nav ml-auto" style="font-size: 18px;">
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" id="Index">
                                     @SharedLocalizer["Index"]
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About" id="About">
                                     @SharedLocalizer["About"]
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ServicesAndPrices">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ServicesAndPrices" id="ServicesAndPrices">
                                     @SharedLocalizer["ServicesAndPrices"]
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment" id="Appointment">
                                     @SharedLocalizer["ReceptionAtReception"]
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-                                    @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
-                                </li>*@
-                            @*<li class="nav-item">
-                                    @Html.ActionLink(@Resources.Resource.Articles, "Articles", null, new { @class = "nav-link" })
-                                </li>*@
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact" id="Contact">
                                     @SharedLocalizer["Contacts"]
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-                                    @Html.ActionLink(@Resources.Resource.News, "News", "Home", null, new { @class = "nav-link" })
-                                </li>*@
+
                         </ul>
                     </div>
                 </div>
@@ -289,51 +291,10 @@
     @*<script src="~/Scripts/jquery.validate.min.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
 
-    @*удалить файл в папке*@
-    @*<script src="~/Scripts/jquery.cookie.js"></script>*@
-
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-
-        // Скрипты для переключения цвета языка интерфейса UA|RU
-        function findCookieValue(cookieName) {
-            var allcookies = document.cookie;
-            var pos = allcookies.indexOf(cookieName + "=");
-
-            // Если cookie с указанным именем найден, извлечь его значения.
-            if (pos != -1) {
-                var start = pos + cookieName.length + 1;
-                var end = allcookies.indexOf(";", start);
-                if (end == -1) end = allcookies.length;
-                var value = allcookies.substring(start, end);
-                value = decodeURIComponent(value);
-                return value;
-            }
-        }
-
-        let nameCookisLanguageUI = findCookieValue(".AspNetCore.Culture");
-        let nameLanguageUI = nameCookisLanguageUI.slice(nameCookisLanguageUI.length - 2);
-
-        //alert(nameLanguageUI);
-
-        if (nameLanguageUI == 'ru') {
-            $('#language-ru').css('color', 'white');
-            $('#language-ua').css('color', '#80d8ff');
-        }
-        else if (nameLanguageUI == 'uk') {
-            $('#language-ua').css('color', 'white');
-            $('#language-ru').css('color', '#80d8ff');
-        }
-        else {
-            $('#language-ua').css('color', 'white');
-            $('#language-ru').css('color', '#80d8ff');
-        }
-
-        // ----------------------------------------------------
-
-        //$('.datepicker').datepicker();
-
+        $("#@(ViewContext.RouteData.Values["Action"])").addClass("active");
 
     </script>
 

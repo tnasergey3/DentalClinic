@@ -37,55 +37,55 @@ header {
     z-index: 5;
 }
 
-    header .navbar-brand {
-        text-transform: uppercase;
-        letter-spacing: .2em;
-        font-weight: 400;
+header .navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: 400;
+}
+
+    header .navbar-brand span {
+        color: #007bff;
     }
 
-        header .navbar-brand span {
-            color: #007bff;
-        }
-
-    header .top-bar {
-        /*background: #007bff;*/
-        background: #039be5;
+header .top-bar {
+    /*background: #007bff;*/
+    background: #039be5;
     }
 
-        header .top-bar a {
+header .top-bar a {
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+header .top-bar .cta-btn {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: #5AC8D8;
+}
+
+    header .top-bar .cta-btn:hover {
+        -webkit-box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
+    }
+
+header .top-bar .social {
+    margin-bottom: 0;
+}
+
+    header .top-bar .social li {
+        display: inline-block;
+        text-align: center;
+    }
+
+        header .top-bar .social li a {
             color: #fff;
             padding: 10px;
-            font-size: 13px;
+            width: 40px;
             display: inline-block;
         }
-
-        header .top-bar .cta-btn {
-            display: inline-block;
-            padding-right: 15px;
-            padding-left: 15px;
-            background: #5AC8D8;
-        }
-
-            header .top-bar .cta-btn:hover {
-                -webkit-box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
-                box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
-            }
-
-        header .top-bar .social {
-            margin-bottom: 0;
-        }
-
-            header .top-bar .social li {
-                display: inline-block;
-                text-align: center;
-            }
-
-                header .top-bar .social li a {
-                    color: #fff;
-                    padding: 10px;
-                    width: 40px;
-                    display: inline-block;
-                }
 
 @media (max-width: 991px) {
     header .top-bar .social li a {
@@ -128,7 +128,8 @@ header .navbar .nav-link {
 }
 
 header .navbar .nav-link.active {
-    color: yellow !important;
+    /*color: yellow !important;*/
+    font-weight: bold;
 }
 
 header .navbar .dropdown-menu {
@@ -215,35 +216,35 @@ header .navbar .dropdown-menu {
         transition: .3s all ease;
     }
 
-        .owl-carousel.home-slider .owl-nav button {
-            color: #fff;
-        }
+.owl-carousel.home-slider .owl-nav button {
+    
+}
 
-    .owl-carousel.home-slider:focus .owl-nav, .owl-carousel.home-slider:hover .owl-nav {
-        opacity: 1;
-        visibility: visible;
-    }
+.owl-carousel.home-slider:focus .owl-nav, .owl-carousel.home-slider:hover .owl-nav {
+    opacity: 1;
+    visibility: visible;
+}
 
-    .owl-carousel.home-slider .slider-item {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        height: calc(100vh - 117px);
-        min-height: 700px;
-    }
+.owl-carousel.home-slider .slider-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: calc(100vh - 117px);
+    min-height: 700px;
+}
 
-        .owl-carousel.home-slider .slider-item .slider-text {
-            color: #fff;
-            height: calc(100vh - 117px);
-            min-height: 700px;
-        }
+.owl-carousel.home-slider .slider-item .slider-text {
+    color: #fff;
+    height: calc(100vh - 117px);
+    min-height: 700px;
+}
 
-            .owl-carousel.home-slider .slider-item .slider-text h1 {
-                font-size: 72px;
-                color: #fff;
-                line-height: 1.2;
-                font-weight: 300;
-            }
+.owl-carousel.home-slider .slider-item .slider-text h1 {
+    font-size: 72px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 300;
+}
 
 @media (max-width: 991px) {
     .owl-carousel.home-slider .slider-item .slider-text h1 {
@@ -830,4 +831,8 @@ a.nav-link:hover {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+}
+
+.media-body-my-params{
+    min-height: 223px;
 }

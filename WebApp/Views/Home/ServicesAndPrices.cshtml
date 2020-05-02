@@ -15,28 +15,6 @@
             <div class="col-md-4 element-animate">
                 <div class="media d-block media-custom text-left">
                     @*<a href="#">*@
-                    <img src='@Url.Content("~/img/Services/lechenie_desen.jpg")' alt="Image Placeholder" class="img-fluid">
-                    @*</a>*@
-                    <div class="media-body media-body-my-params">
-                        <h3 class="mt-0">
-                            <a href="#" class="text-black">
-                                @*Обследование*@
-                                @*@Resources.Resource.Survey*@
-                                @SharedLocalizer["Survey"]
-                            </a>
-                        </h3>
-                        <ul>
-                            <li>@SharedLocalizer["RoutineInspection"]</li> @*профосмотр*@
-                            <li>@SharedLocalizer["SpecialistConsultation"]</li> @*консультация специалиста*@
-                            <li>@SharedLocalizer["DentalRadiography"]</li> @*дентальная ренгенография*@
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 element-animate">
-                <div class="media d-block media-custom text-left">
-                    @*<a href="#">*@
                     <img src='@Url.Content("~/img/Services/services-1081_02.png")' alt="Image Placeholder" class="img-fluid">
                     @*</a>*@
                     <div class="media-body media-body-my-params">
@@ -71,7 +49,29 @@
                             <li>@SharedLocalizer["SingleCrowns"]</li> @*одиночные коронки*@
                             <li>@SharedLocalizer["Bridge_likeDentures"]</li> @*мостоподобные протезы*@
                             <li>@SharedLocalizer["RemovableProsthetics"]</li> @*сьёмное протезирование*@
-                            <li>@SharedLocalizer["MetalCeramics"]</li> @*металокерамика*@
+                            <li>@SharedLocalizer["MetalCeramics"]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 element-animate">
+                <div class="media d-block media-custom text-left">
+                    @*<a href="#">*@
+                    <img src='@Url.Content("~/img/Services/otbelivanie.jpg")' alt="Image Placeholder" class="img-fluid">
+                    @*</a>*@
+                    <div class="media-body media-body-my-params">
+                        <h3 class="mt-0">
+                            <a href="#" class="text-black">
+                                @*Профилактика и эстетика*@
+                                @SharedLocalizer["PreventionAndAesthetics"]
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>@SharedLocalizer["RemovalOfDentalPlaque"]</li> @*удаление зубных отложений*@
+                            <li>@SharedLocalizer["CoatingTeethFluorideVarnish"]</li> @*покрытие зубов фтор-лаком*@
+                            <li>@SharedLocalizer["SealingFigures"]</li> @*герметизация фигур*@
+                            <li>@SharedLocalizer["Silvering"]</li> @*серебление*@
                         </ul>
                     </div>
                 </div>
@@ -80,6 +80,28 @@
 
         </div>
         <div class="row">
+
+            <div class="col-md-4 element-animate">
+                <div class="media d-block media-custom text-left">
+                    @*<a href="#">*@
+                    <img src='@Url.Content("~/img/Services/lechenie_desen.jpg")' alt="Image Placeholder" class="img-fluid">
+                    @*</a>*@
+                    <div class="media-body media-body-my-params">
+                        <h3 class="mt-0">
+                            <a href="#" class="text-black">
+                                @*Обследование*@
+                                @*@Resources.Resource.Survey*@
+                                @SharedLocalizer["Survey"]
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>@SharedLocalizer["RoutineInspection"]</li> @*профосмотр*@
+                            <li>@SharedLocalizer["SpecialistConsultation"]</li> @*консультация специалиста*@
+                            <li>@SharedLocalizer["DentalRadiography"]</li> @*дентальная ренгенография*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-md-4 element-animate">
                 <div class="media d-block media-custom text-left">
@@ -105,36 +127,17 @@
                     @*<a href="#">*@
                     <img src='@Url.Content("~/img/Services/protezirovanie_02.jpg")' alt="Image Placeholder" class="img-fluid">
                     @*</a>*@
-                    <div class="media-body media-body-my-params" style="min-height:200px;">
-                        <h3 class="mt-0">
-                            <a href="#" class="text-black">
-                                @*Протезирование*@
-                                @SharedLocalizer["Prosthetics"]
-                            </a>
-                        </h3>
-                    </div>
+                <div class="media-body media-body-my-params">
+                    <h3 class="mt-0">
+                        <a href="#" class="text-black">
+                            @*Протезирование*@
+                            @SharedLocalizer["Prosthetics"]
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>@SharedLocalizer["Prosthetics"]</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="col-md-4 element-animate">
-                <div class="media d-block media-custom text-left">
-                    @*<a href="#">*@
-                    <img src='@Url.Content("~/img/Services/otbelivanie.jpg")' alt="Image Placeholder" class="img-fluid">
-                    @*</a>*@
-                    <div class="media-body media-body-my-params">
-                        <h3 class="mt-0">
-                            <a href="#" class="text-black">
-                                @*Профилактика и эстетика*@
-                                @SharedLocalizer["PreventionAndAesthetics"]
-                            </a>
-                        </h3>
-                        <ul>
-                            <li>@SharedLocalizer["RemovalOfDentalPlaque"]</li> @*удаление зубных отложений*@
-                            <li>@SharedLocalizer["CoatingTeethFluorideVarnish"]</li> @*покрытие зубов фтор-лаком*@
-                            <li>@SharedLocalizer["SealingFigures"]</li> @*герметизация фигур*@
-                            <li>@SharedLocalizer["Silvering"]</li> @*серебление*@
-                        </ul>
-                    </div>
                 </div>
             </div>
 
