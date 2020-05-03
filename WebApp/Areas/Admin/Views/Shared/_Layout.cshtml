@@ -3,10 +3,6 @@
 @inject IViewLocalizer Localizer
 @inject IHtmlLocalizer<WebApp.Classes.SharedResource> SharedLocalizer
 
-@{ 
-    //var controller = ViewContext.RouteData.Values["Controller"];
-    //var action = ViewContext.RouteData.Values["Action"];
-}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -48,29 +44,15 @@
                                     <span class="fa fa-facebook"></span>
                                 </a>
                             </li>
-                            @*<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-instagram"></span></a></li>*@
+
                         </ul>
                     </div>
 
-                    @*<div class="col-md-4 col-sm-4 col-auto text-center">
-                            <p class="mb-0">
-                                @Html.ActionLink("Заказать звонок", "About", null, new { @class = "cta-btn", data_toggle = "modal", data_target = "#modalCallBack" })
-                            </p>
-                        </div>*@
 
-                    @*<div class="col-md-3 col-sm-4 col-5 col-auto ">
-                                <p class="mb-0 pull-right ">
-                                    @Html.ActionLink("UA", "ChangeCulture", "Home", new { id = "uk" }, new { id = "language-ua", @class = "button-for-language" })
-                                    <span style="color: white;">|</span>
-                                    @Html.ActionLink("RU", "ChangeCulture", "Home", new { id = "ru" }, new { id = "language-ru", @class = "button-for-language" })
-                                    @Html.ActionLink("Вход", "Authorization", "Home")
-                                </p>
-                        </div>*@
 
-                    <div class="col-md-3 col-sm-4 col-5 col-auto">
+                    @*<div class="col-md-3 col-sm-4 col-5 col-auto">
                         @await Html.PartialAsync("_SelectLanguagePartial")
-                    </div>
+                    </div>*@
 
                     <div>
 
@@ -145,25 +127,7 @@
 
     </header>
 
-    @if (IsSectionDefined("Slider"))
-    {
-        @RenderSection("Slider");
-    }
-    else
-    {
-        <div class="top-bar" style="background-color:#e1f5fe;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-8 col-12">
-                        <ol class="social list-unstyled" style="padding-top:10px; padding-bottom:10px;">
-                            <li><span style="color:black; font-size: 26px; border-bottom: 3px solid;">@ViewBag.Title</span></li>
-                            <li class="active"></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -172,95 +136,8 @@
     </div>
 
     <footer class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="row element-animate" style="margin-bottom: 0px;">
-                <div class="col-md-4 ">
-                    <h3>
-                        @SharedLocalizer["ServicesAndPrices"]
-                    </h3>
-                    <ul class="footer-link list-unstyled">
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                @*Обследование*@
-                                @SharedLocalizer["Survey"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                @*Терапевтическое лечение*@
-                                @SharedLocalizer["TherapeuticTreatment"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                @*Ортопедия*@
-                                @SharedLocalizer["Orthopedics"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                Хирургия
-                                @*@Resources.Resource.Surgery*@
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                @*Протезирование*@
-                                @SharedLocalizer["Prosthetics"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href='@Url.Action("ServicesAndPrices", "Home")'>
-                                @*Профилактика и эстетика*@
-                                @SharedLocalizer["PreventionAndAesthetics"]
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4 ">
-                    <h3>
-                        @*График работы*@
-                        @SharedLocalizer["Schedule"]
-                    </h3>
-                    <ul class="footer-link list-unstyled">
-                        <li>
-                            <a href="#">
-                                @*понедельник - суббота с 09.00 до 20.00*@
-                                @SharedLocalizer["MondaySaturdayFrom"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                @*перерыв с 14.00 до 16.00*@
-                                @SharedLocalizer["BreakFrom"]
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                @*воскресенье - выходной*@
-                                @SharedLocalizer["SundayIsADayOff"]
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>
-                        @SharedLocalizer["Contacts"]
-                    </h3>
-                    <h4 class="mb-3 h6 text-white">
-                        @SharedLocalizer["Address"]
-                    </h4>
-                    <p class=" ">
-                        @SharedLocalizer["Address1"]
-                    </p>
-                    <h4 class="mb-3 h6 text-white">Email:</h4>
-                    <p class=" "><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
-                    <h4 class="mb-3 h6 text-white">Телефон:</h4>
-                    <p>+38 (063) 877-27-16</p>
-                    <p>+38 (063) 494-17-50</p>
-                </div>
-            </div>
-            <div class="row pt-md-3 element-animate">
+        <div class="container">                        
+            <div class="row pt-md-3">
                 <div class="col-md-12">
                     <hr class="border-t">
                 </div>
