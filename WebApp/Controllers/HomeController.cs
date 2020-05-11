@@ -90,7 +90,7 @@ namespace WebApp.Controllers
         [HttpGet]
         public ActionResult Contact()
         {
-            ClientMessage clientMessages = new ClientMessage();
+            //CustomerMessages customerMessages = new CustomerMessages();
             //clientMessages.Id = 1;
             //clientMessages.Name = "Petro";
             //clientMessages.Phone = "test phone";
@@ -98,21 +98,21 @@ namespace WebApp.Controllers
             //clientMessages.Date = DateTime.Now;
             //clientMessages.Status = "В обработке";
 
-            return View(clientMessages);
+            //return View(customerMessages);
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Contact(ClientMessage incomingData)
+        public ActionResult Contact(CustomerMessages customerMessage)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    incomingData.Date = DateTime.Now;
-                    incomingData.Status = "не обработано";
-                    //db.ClientMessages.Add(incomingData);
-                    //db.SaveChanges();
+                    customerMessage.Date = DateTime.Now;
+                    customerMessage.Status = "не обработано";
 
+                    CustomerMessagesRepository.AddMessage(customerMessage);
                 }
                 catch (Exception e)
                 {
