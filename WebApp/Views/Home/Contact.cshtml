@@ -15,80 +15,80 @@
             <div class="col-md-6 mb-5 element-animate">
                 @using (Html.BeginForm())
                 {
-                    <div class="row">
-                        <div class="col-md-12 form-group" style="text-align:center; text-transform:uppercase;">
-                            <h5>
-                                @SharedLocalizer["ContactUs"]
-                            </h5>
-                        </div>
+                <div class="row">
+                    <div class="col-md-12 form-group" style="text-align:center; text-transform:uppercase;">
+                        <h5>
+                            @SharedLocalizer["ContactUs"]
+                        </h5>
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label for="Surname">
-                                Фамилия
-                            </label>
-                            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Surname)
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="Name">
-                                @SharedLocalizer["Name"]
-                                <span class="text-danger">*</span>
-                            </label>
-                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Name)
-                        </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="Surname">
+                            Фамилия
+                        </label>
+                        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Surname)
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label for="Patronymic">
-                                Отчество
-                            </label>
-                            @Html.TextBoxFor(m => m.Patronymic, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Patronymic)
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="Phone">
-                                @SharedLocalizer["Phone"]
-                                <span class="text-danger">*</span>
-                            </label>
-                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Phone)
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="Email">Email</label>
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email)
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="Message">
-                                @SharedLocalizer["YourMessage"]
-                                <span class="text-danger">*</span>
-                            </label>
-                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;" })
-                            @Html.ValidationMessageFor(m => m.Message)
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
+                    <div class="col-md-6 form-group">
+                        <label for="Name">
+                            @SharedLocalizer["Name"]
                             <span class="text-danger">*</span>
-                            - поля обязательные для заполнения
-                        </div>
+                        </label>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="submit" value=@SharedLocalizer["Send"] class="btn btn-primary btn-lg btn-block">
-                        </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="Patronymic">
+                            Отчество
+                        </label>
+                        @Html.TextBoxFor(m => m.Patronymic, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Patronymic)
                     </div>
+                    <div class="col-md-6 form-group">
+                        <label for="Phone">
+                            @SharedLocalizer["Phone"]
+                            <span class="text-danger">*</span>
+                        </label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Phone)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="Email">Email</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="Message">
+                            @SharedLocalizer["YourMessage"]
+                            <span class="text-danger">*</span>
+                        </label>
+                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;" })
+                        @Html.ValidationMessageFor(m => m.Message)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <span class="text-danger">*</span>
+                        - поля обязательные для заполнения
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input type="submit" value=@SharedLocalizer["Send"] class="btn btn-primary btn-lg btn-block">
+                    </div>
+                </div>
                 }
             </div>
             <div class="col-md-1"></div>
@@ -156,4 +156,35 @@
         </div>
     </div>
 </section>
+
+@*<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //alert("DOM готов!");
+      });
+    </script>*@
+
+<!-- Modal -->
+
+@*@if (TempData["ShowModalWindow"] != null && (bool)TempData["ShowModalWindow"] == true)
+{
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ваше сообщение успешно отправлено</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>alert("123")</script>
+
+}*@
 

@@ -90,15 +90,6 @@ namespace WebApp.Controllers
         [HttpGet]
         public ActionResult Contact()
         {
-            //CustomerMessages customerMessages = new CustomerMessages();
-            //clientMessages.Id = 1;
-            //clientMessages.Name = "Petro";
-            //clientMessages.Phone = "test phone";
-            //clientMessages.Email = "testmail@mail.com";
-            //clientMessages.Date = DateTime.Now;
-            //clientMessages.Status = "В обработке";
-
-            //return View(customerMessages);
             return View();
         }
 
@@ -113,6 +104,8 @@ namespace WebApp.Controllers
                     customerMessage.Status = "не обработано";
 
                     CustomerMessagesRepository.AddMessage(customerMessage);
+                    //ViewBag.ShowModalWindow = true;
+                    TempData["ShowModalWindow"] = true;
                 }
                 catch (Exception e)
                 {
