@@ -9,8 +9,6 @@
     ViewBag.CurrentPage = "Appointment";
 }
 
-
-
 <section class="section" style="padding: 1em 0;">
     <div class="container">
         <div class="row">
@@ -20,27 +18,43 @@
                     <div class="row">
                         @Html.ValidationSummary(true)
                     </div>
+
                     <div class="row">
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-6 form-group">
+                            <label for="Surname">
+                                Фамилия
+                            </label>
+                            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Surname)
+                        </div>
+                        <div class="col-md-6 form-group">
                             <label for="Name">
-                                @*Фамилия, имя, отчество*@
-                                @*@Resources.Resource.FullName*@
-                                @SharedLocalizer["FullName"]
+                                @SharedLocalizer["Name"]
+                                <span class="text-danger">*</span>
                             </label>
                             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Name)
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-md-12 form-group">
+                        <div class="col-md-6 form-group">
+                            <label for="Patronymic">
+                                Отчество
+                            </label>
+                            @Html.TextBoxFor(m => m.Patronymic, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Patronymic)
+                        </div>
+                        <div class="col-md-6 form-group">
                             <label for="Phone">
-                                @*@Resources.Resource.Phone*@
                                 @SharedLocalizer["Phone"]
+                                <span class="text-danger">*</span>
                             </label>
                             @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Phone)
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-12 form-group">
                             <label for="email">Email</label>
@@ -52,9 +66,10 @@
                         <div class="col-md-12 form-group">
                             @*@Html.LabelFor(m => m.DesiredDate)*@
                             <label for="DesiredDate">
-                                 @SharedLocalizer["DesiredDate"]
+                                @SharedLocalizer["DesiredDate"]
+                                <span class="text-danger">*</span>
                             </label>
-                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", @*id = "appointment_date"*@type = "date" })
+                            @Html.TextBoxFor(m => m.DesiredDate, new { @class = "form-control", @*value = DateTime.Now.ToString("yyyy-MM-dd"),*@ @type = "date" })
                             @Html.ValidationMessageFor(m => m.DesiredDate)
                         </div>
                     </div>
@@ -64,10 +79,18 @@
                                 @*@Resources.Resource.YourMessage*@
                                 @SharedLocalizer["YourMessage"]
                             </label>
-                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;"  })
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @style = "max-width: 540px; height: 155px;" })
                             @Html.ValidationMessageFor(m => m.Message)
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <span class="text-danger">*</span>
+                            - поля обязательные для заполнения
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="submit" value=@SharedLocalizer["Send"] class="btn btn-primary btn-lg btn-block">
@@ -98,7 +121,7 @@
                     @*@Resources.Resource.MondaySaturdayFrom;*@
                     @SharedLocalizer["MondaySaturdayFrom"]
                     @*<br>
-                    перерыв с 14.00 до 16.00*@
+                        перерыв с 14.00 до 16.00*@
                     @*@Resources.Resource.BreakFrom*@
                     @SharedLocalizer["BreakFrom"]
                     <br>

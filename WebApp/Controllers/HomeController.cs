@@ -73,6 +73,7 @@ namespace WebApp.Controllers
                 try
                 {
                     incomingData.Status = "не обработано";
+                    incomingData.DesiredDate = DateTime.Now;
                     //db.Appointments.Add(incomingData);
                     //db.SaveChanges();
 
